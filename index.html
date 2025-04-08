@@ -1,49 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensivo 3D - Impresión Creativa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mensivo 3D - Impresión Creativa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-    <header class="bg-gradient-to-r from-red-500 to-pink-500 text-center py-6 px-4">
-        <h1 class="text-3xl md:text-4xl font-bold">Mensivo 3D</h1>
-        <p class="text-lg md:text-xl">Transformamos tus ideas en realidad con impresión 3D de alta calidad</p>
-    </header>
+  <header class="bg-gradient-to-r from-red-500 to-pink-500 text-center py-6 px-4">
+    <h1 class="text-3xl md:text-4xl font-bold">Mensivo 3D</h1>
+    <p class="text-lg md:text-xl">Transformamos tus ideas en realidad con impresión 3D de alta calidad</p>
+  </header>
 
-    <section class="text-center py-10 px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold">Clientes</h2>
-        <div class="mt-6">
-            <h3 class="text-lg md:text-xl font-medium">Porta Latas / Guiro</h3>
-            <div class="flex justify-center mt-4">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@koolish_friends/video/7471282031796751622" data-video-id="7471282031796751622" style="max-width: 90%; min-width: 300px;"> 
-                    <section> <a target="_blank" title="@koolish_friends" href="https://www.tiktok.com/@koolish_friends?refer=embed">@koolish_friends</a> Lo último que te falta para estar listo para el carnaval de Oruro </section> 
-                </blockquote> 
-                <script async src="https://www.tiktok.com/embed.js"></script>
-            </div>
-            <div class="mt-6">
-              <h4 class="text-lg font-medium">Disponibilidad de colores:</h4>
-              <div class="flex justify-center gap-2 mt-2">
-                  <span class="w-6 h-6 rounded-full bg-red-500"></span>
-                  <span class="w-6 h-6 rounded-full bg-white border"></span>
-                  <span class="w-6 h-6 rounded-full bg-yellow-500"></span>
-                  <span class="w-6 h-6 rounded-full bg-blue-500"></span>
-                  <span class="w-6 h-6 rounded-full bg-pink-500"></span>
-                  <span class="w-6 h-6 rounded-full bg-black"></span>
-              </div>
-          </div>
-            <a href="https://wa.me/59177454545" target="_blank" class="mt-6 inline-block bg-green-500 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg">Click para comprar!</a>
+  <section class="text-center py-10 px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold">Clientes</h2>
+    <div class="mt-6">
+      <h3 class="text-lg md:text-xl font-medium">Porta Latas / Guiro</h3>
+      <div class="flex justify-center mt-4">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@koolish_friends/video/7471282031796751622" data-video-id="7471282031796751622" style="max-width: 90%; min-width: 300px;"> 
+          <section>
+            <a target="_blank" title="@koolish_friends" href="https://www.tiktok.com/@koolish_friends?refer=embed">@koolish_friends</a>
+            Lo último que te falta para estar listo para el carnaval de Oruro
+          </section> 
+        </blockquote> 
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+
+      <!-- Stripe Buy Button solo visible en Bolivia -->
+      <div id="stripe-button-container" class="mt-6"></div>
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+      <script>
+        fetch('https://ipapi.co/json/')
+          .then(response => response.json())
+          .then(data => {
+            if (data.country_code === "BO") {
+              const stripeBtn = document.createElement("stripe-buy-button");
+              stripeBtn.setAttribute("buy-button-id", "buy_btn_1RBTZeBcKMOUeF9WZboTuDYk");
+              stripeBtn.setAttribute("publishable-key", "pk_live_51QQbYQBcKMOUeF9WSAF9PbRcXZnQIHxOntquvydsbKd32eO35ypMxPoP7ebpSRhNcOHuP20xfZHaRvw5ysHNzQ1B00ttMze8GL");
+              document.getElementById("stripe-button-container").appendChild(stripeBtn);
+            }
+          })
+          .catch(error => {
+            console.error("No se pudo detectar la ubicación:", error);
+          });
+      </script>
+
+      <div class="mt-6">
+        <h4 class="text-lg font-medium">Disponibilidad de colores:</h4>
+        <div class="flex justify-center gap-2 mt-2">
+          <span class="w-6 h-6 rounded-full bg-red-500"></span>
+          <span class="w-6 h-6 rounded-full bg-white border"></span>
+          <span class="w-6 h-6 rounded-full bg-yellow-500"></span>
+          <span class="w-6 h-6 rounded-full bg-blue-500"></span>
+          <span class="w-6 h-6 rounded-full bg-pink-500"></span>
+          <span class="w-6 h-6 rounded-full bg-black"></span>
         </div>
-    </section>
+      </div>
 
-    <section class="text-center py-10 px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold">Contacto Mensivo3D</h2>
-        <a href="https://wa.me/59173499019" target="_blank" class="mt-6 inline-block bg-green-500 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg">Quiero cotizar una impresion o un diseño</a>
-    </section>
+      <a href="https://wa.me/59177454545" target="_blank" class="mt-6 inline-block bg-green-500 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg">Click para comprar!</a>
+    </div>
+  </section>
 
-    <footer class="bg-gradient-to-r from-red-500 to-pink-500 text-center py-4">
-        <p>&copy; 2025 Mensivo 3D - Todos los derechos reservados</p>
-    </footer>
+  <section class="text-center py-10 px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold">Contacto Mensivo3D</h2>
+    <a href="https://wa.me/59173499019" target="_blank" class="mt-6 inline-block bg-green-500 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg">Quiero cotizar una impresión o un diseño</a>
+  </section>
+
+  <footer class="bg-gradient-to-r from-red-500 to-pink-500 text-center py-4">
+    <p>&copy; 2025 Mensivo 3D - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>
