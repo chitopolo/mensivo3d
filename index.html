@@ -26,14 +26,14 @@
         <script async src="https://www.tiktok.com/embed.js"></script>
       </div>
 
-      <!-- Stripe Buy Button solo visible en Bolivia -->
+      <!-- Stripe Buy Button no visible en Bolivia -->
       <div id="stripe-button-container" class="mt-6"></div>
       <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       <script>
         fetch('https://ipapi.co/json/')
           .then(response => response.json())
           .then(data => {
-            if (data.country_code === "BO") {
+            if (data.country_code !== "BO") {
               const stripeBtn = document.createElement("stripe-buy-button");
               stripeBtn.setAttribute("buy-button-id", "buy_btn_1RBTZeBcKMOUeF9WZboTuDYk");
               stripeBtn.setAttribute("publishable-key", "pk_live_51QQbYQBcKMOUeF9WSAF9PbRcXZnQIHxOntquvydsbKd32eO35ypMxPoP7ebpSRhNcOHuP20xfZHaRvw5ysHNzQ1B00ttMze8GL");
