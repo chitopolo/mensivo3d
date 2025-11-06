@@ -6,6 +6,28 @@
     <title>Mensivo3D - Impresión 3D Profesional</title>
     <script type="module" src="/main.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-58Z9UJLkNpXR2+PxAKlB9Z+nQnA8aD7uVZDRvvl5Qn6XzNvOpz+BOd8d4zR6mD81hEwXLyd+N7z5vE9XKE1dfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-tbC+mF88N0oQ3nK3NSjLaYMRZT+qNDwBJ7Oj3+HvP6rh7XgC3KkI2kzWnMCO53ldES8JXHk9WxqkeBkgG6NBnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+.masonry {
+column-count: 1;
+column-gap: 1rem;
+}
+@media (min-width: 768px) {
+.masonry {
+column-count: 2;
+}
+}
+@media (min-width: 1024px) {
+.masonry {
+column-count: 3;
+}
+}
+.masonry-item {
+break-inside: avoid;
+margin-bottom: 1rem;
+}
+</style>
   </head>
   <body class="bg-gray-100 text-gray-800">
     <header class="bg-white shadow-md">
@@ -44,31 +66,73 @@
     </section>
 
     <section id="portafolio" class="bg-gray-200 py-16 px-6">
-      <h3 class="text-3xl font-bold text-center mb-10">Portafolio 3D</h3>
-      <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg overflow-hidden shadow-md">
-          <img src="/img/llaveros1.png" alt="Proyecto 1" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold">Llaveros personalizados</h4>
-            <p class="text-sm mt-2">Llaveros corporativos</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-md">
-          <img src="/img/llavero3.jpg" alt="Proyecto 2" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold">Porta celulares</h4>
-            <p class="text-sm mt-2">Un recuerdo que no olvidarán</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-md">
-          <img src="/img/e&e1.JPG" alt="Proyecto 3" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold">Estilo y espacios</h4>
-            <p class="text-sm mt-2">Impresión premium</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<h3 class="text-3xl font-bold text-center mb-10">Portafolio 3D</h3>
+<div class="container mx-auto masonry">
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/llaveros1.png" data-lightbox="llaveros" data-title="Llaveros personalizados">
+<img src="/img/llaveros1.png" alt="Llaveros personalizados" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Llaveros personalizados</h4>
+<p class="text-sm mt-2">Llaveros corporativos</p>
+</div>
+</div>
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/llavero3.jpg" data-lightbox="celulares" data-title="Porta celulares">
+<img src="/img/llavero3.jpg" alt="Porta celulares" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Porta celulares</h4>
+<p class="text-sm mt-2">Un recuerdo que no olvidarán</p>
+</div>
+</div>
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/e&e1.JPG" data-lightbox="espacios" data-title="Estilo y espacios">
+<img src="/img/e&e1.JPG" alt="Estilo y espacios" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Estilo y espacios</h4>
+<p class="text-sm mt-2">Impresión premium</p>
+</div>
+</div>
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/e&e2.JPG" data-lightbox="espacios" data-title="Estilo y espacios">
+<img src="/img/e&e2.JPG" alt="Estilo y espacios" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Estilo y espacios</h4>
+<p class="text-sm mt-2">Impresión premium</p>
+</div>
+</div>
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/e&e3.JPG" data-lightbox="espacios" data-title="Estilo y espacios">
+<img src="/img/e&e3.JPG" alt="Estilo y espacios" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Estilo y espacios</h4>
+<p class="text-sm mt-2">Impresión premium</p>
+</div>
+</div>
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/e&e4.JPG" data-lightbox="espacios" data-title="Estilo y espacios">
+<img src="/img/e&e4.JPG" alt="Estilo y espacios" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Estilo y espacios</h4>
+<p class="text-sm mt-2">Impresión premium</p>
+</div>
+</div>
+<div class="masonry-item bg-white rounded-lg overflow-hidden shadow-md">
+<a href="/img/e&e5.JPG" data-lightbox="espacios" data-title="Estilo y espacios">
+<img src="/img/e&e5.JPG" alt="Estilo y espacios" class="w-full object-cover">
+</a>
+<div class="p-4">
+<h4 class="text-xl font-semibold">Estilo y espacios</h4>
+<p class="text-sm mt-2">Impresión premium</p>
+</div>
+</div>
+</div>
+</section>
 
    
 
