@@ -94,17 +94,21 @@
 
     <section id="contacto" class="bg-blue-50 py-16 px-6">
       <h3 class="text-3xl font-bold text-center mb-10">Contáctanos</h3>
-      <form class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md">
+      <form onsubmit="enviarWhatsApp(event)" class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md">
         <div class="mb-4">
           <label class="block text-sm font-semibold mb-2" for="nombre">Nombre</label>
           <input class="w-full px-4 py-2 border rounded-lg" type="text" id="nombre" required />
         </div>
         <div class="mb-4">
-          <label class="block text-sm font-semibold mb-2" for="email">Correo electrónico</label>
-          <input class="w-full px-4 py-2 border rounded-lg" type="email" id="email" required />
+          <label class="block text-sm font-semibold mb-2" for="ciudad">Ciudad</label>
+          <input class="w-full px-4 py-2 border rounded-lg" type="text" id="ciudad" required />
         </div>
         <div class="mb-4">
-          <label class="block text-sm font-semibold mb-2" for="mensaje">Mensaje</label>
+          <label class="block text-sm font-semibold mb-2" for="whatsapp">Whatsapp</label>
+          <input class="w-full px-4 py-2 border rounded-lg" type="text" id="whatsapp" required />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-2" for="mensaje">Descripción de lo que deseas cotizar</label>
           <textarea class="w-full px-4 py-2 border rounded-lg" id="mensaje" rows="4" required></textarea>
         </div>
         <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Enviar</button>
@@ -114,5 +118,20 @@
     <footer class="bg-gray-800 text-white py-6 text-center">
       <p>&copy; 2025 Mensivo3D. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+      function enviarWhatsApp(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const ciudad = document.getElementById('ciudad').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        const texto = `Hola Mensivo3D!%0AQuiero cotizar una impresión 3D con los siguientes datos:%0A%0A🔹 Nombre: ${nombre}%0A🔹 Ciudad: ${ciudad}%0A🔹 Whatsapp: ${whatsapp}%0A🔹 Descripción: ${mensaje}`;
+
+        const url = `https://api.whatsapp.com/send?phone=59173499019&text=${texto}`;
+        window.open(url, '_blank');
+      }
+    </script>
   </body>
 </html>
